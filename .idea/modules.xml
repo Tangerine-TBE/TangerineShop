@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/EcAnnotations/EcAnnotations.iml" filepath="$PROJECT_DIR$/EcAnnotations/EcAnnotations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EcApp/EcApp.iml" filepath="$PROJECT_DIR$/EcApp/EcApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EcCompile/EcCompile.iml" filepath="$PROJECT_DIR$/EcCompile/EcCompile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EcCore/EcCore.iml" filepath="$PROJECT_DIR$/EcCore/EcCore.iml" />
       <module fileurl="file://$PROJECT_DIR$/EcShopping.iml" filepath="$PROJECT_DIR$/EcShopping.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EcUi/EcUi.iml" filepath="$PROJECT_DIR$/EcUi/EcUi.iml" />
     </modules>
   </component>
 </project>
