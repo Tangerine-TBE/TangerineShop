@@ -15,5 +15,7 @@ public class ExampleApp extends Application {
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FrontEcMoudle())
                 .Configure();
+
     }
+   
 }
