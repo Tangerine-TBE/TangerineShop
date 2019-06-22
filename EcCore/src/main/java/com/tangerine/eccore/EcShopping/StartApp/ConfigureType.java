@@ -1,4 +1,4 @@
-package com.tangerine.eccore.EcShopping;
+package com.tangerine.eccore.EcShopping.StartApp;
 
 public enum  ConfigureType {
     API_HOST,

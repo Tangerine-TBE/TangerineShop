@@ -1,6 +1,5 @@
-package com.tangerine.eccore.EcShopping;
+package com.tangerine.eccore.EcShopping.StartApp;
 
-import com.joanzapata.iconify.Icon;
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
 

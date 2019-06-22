@@ -3,7 +3,7 @@ package com.tangerine.android;
 import android.app.Application;
 
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
-import com.tangerine.eccore.EcShopping.EcStart;
+import com.tangerine.eccore.EcShopping.StartApp.EcStart;
 import com.tangerine.ecui.Icon.FrontEcMoudle;
 
 public class ExampleApp extends Application {
@@ -17,5 +17,5 @@ public class ExampleApp extends Application {
                 .Configure();
 
     }
-   
+
 }
