@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/holo_orange_dark"
+            >
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="登录"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingTop="56dp"
+            android:paddingRight="24dp">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="72dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"
+                android:src="@mipmap/beauty04" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/android_sign_in_edit_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="邮箱"
+                    android:inputType="textEmailAddress"
+                    tools:ignore="HardcodedText" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/android_sign_in_edit_passWord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="密码"
+                    android:inputType="textPassword"
+                    tools:ignore="HardcodedText" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/android_sign_in_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:background="@android:color/holo_orange_dark"
+                android:gravity="center_horizontal"
+                android:padding="12dp"
+                android:text="登录"
+                android:textColor="@android:color/white"
+                tools:ignore="HardcodedText" />
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/android_sign_in_button_TextView"
+                android:text="没有账号？请注册"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                tools:ignore="HardcodedText" />
+            <com.joanzapata.iconify.widget.IconTextView
+                android:id="@+id/icon_sign_in_weChat"
+                android:textSize="40sp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="{fa-weChat}"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                />
+
+        </LinearLayout>
+
+</LinearLayout>

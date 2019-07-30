@@ -1,7 +1,7 @@
 package com.tangerine.ecui.Icon;
 
 public enum  Icon implements com.joanzapata.iconify.Icon {
-    fa_WeChat('\ue679')
+    fa_weChat('\ue620')
     ;
     char aChar;
     Icon(char aChar){

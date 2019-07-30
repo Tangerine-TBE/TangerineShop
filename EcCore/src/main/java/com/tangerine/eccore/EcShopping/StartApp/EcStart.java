@@ -9,7 +9,10 @@ public class EcStart {
         getConfigurations().put(ConfigureType.APPLICATION_CONTEXT.name(),context.getApplicationContext());
         return Configurator.getInstance();
     }
-    private static HashMap<String,Object> getConfigurations(){
+     public static  HashMap<String,Object> getConfigurations(){
         return Configurator.getInstance().getEcConfigs();
+    }
+    public static Context getApplication(){
+        return (Context) getConfigurations().get(ConfigureType.APPLICATION_CONTEXT.name());
     }
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <dbname value="UserProfile" />
+
+    <version value="1" />
+
+    <list>
+        <mapping class ="com.tangerine.ecui.database.user_profile"/>
+    </list>
+
+
+</litepal>
