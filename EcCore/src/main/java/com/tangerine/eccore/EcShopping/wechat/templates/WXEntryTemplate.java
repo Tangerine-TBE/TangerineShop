@@ -1,12 +1,19 @@
 package com.tangerine.eccore.EcShopping.wechat.templates;
 
-import com.tangerine.eccore.EcShopping.Activity.ProxyActivity;
-import com.tangerine.eccore.EcShopping.Fragment.StartFragment;
+import com.tangerine.eccore.EcShopping.wechat.EcWeChat.StartWeChat;
+import com.tangerine.eccore.EcShopping.wechat.WEACTIVITY.BaseWXEntryActivity;
 
-public class WXEntryTemplate extends ProxyActivity {
+public class WXEntryTemplate extends BaseWXEntryActivity {
+    @Override
+    protected void onResume() {
+        super.onResume();
+        finish();
+        overridePendingTransition(0, 0 );
+    }
 
     @Override
-    public StartFragment setRootFragment() {
-        return null;
+    protected void onSignUpSuccess(String userInfo) {
+        StartWeChat.getInstance().getIwxSignInCallBack().onSignInSuccess(userInfo);
     }
+
 }

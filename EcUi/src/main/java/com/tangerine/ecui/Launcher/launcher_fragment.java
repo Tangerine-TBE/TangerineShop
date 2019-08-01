@@ -68,7 +68,7 @@ public class launcher_fragment extends StartFragment implements ITimerListener {
 
     private void checkIsShowScroll(){
         if (!EcPreferences.getAppFlag(LaucherScrollTag.HAS_FRIST_LOG.name())){
-            start(new launcherScroll_fragment(),SINGLETASK);
+            startWithPop(new launcherScroll_fragment());
         }else{
             AccountManager.checkAccount(new IUserChecker() {
                 @Override

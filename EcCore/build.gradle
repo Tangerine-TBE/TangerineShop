@@ -60,6 +60,8 @@ dependencies {
     api  'com.bigkoo:convenientbanner:2.0.5'
     api 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:2.0.24'
 //    数据库
-
     api 'org.litepal.android:java:3.0.0'
+//    微信接入
+    //noinspection GradleDynamicVersion
+    api  'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 }

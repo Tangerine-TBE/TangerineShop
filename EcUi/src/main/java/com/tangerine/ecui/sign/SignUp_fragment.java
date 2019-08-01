@@ -30,7 +30,7 @@ public class SignUp_fragment extends StartFragment {
     TextInputEditText editPhone = null;
     @OnClick(R2.id.sign_up_button_TextView)
     void signInLinkButtonOnClick(){
-        start(new SignIn_Fragment());
+        startWithPop(new SignIn_Fragment());
     }
     @OnClick(R2.id.android_sign_up_button)
     void signUpOnclick(){

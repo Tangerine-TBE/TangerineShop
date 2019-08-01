@@ -17,6 +17,8 @@ public class ExampleApp extends Application {
                 .withApi_Host("http://mock.fulingjie.com/mock-android/data/user_profile.json/")
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FrontEcMoudle())
+                .withAppId("Xxxx")
+                .withAppSecret("xxxx")
                 .Configure();
         LitePal.initialize(this);
         initStetho();

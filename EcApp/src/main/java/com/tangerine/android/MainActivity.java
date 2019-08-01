@@ -8,9 +8,11 @@ import android.widget.Toast;
 
 import com.tangerine.eccore.EcShopping.Activity.ProxyActivity;
 import com.tangerine.eccore.EcShopping.Fragment.StartFragment;
+import com.tangerine.eccore.EcShopping.StartApp.EcStart;
 import com.tangerine.eccore.EcShopping.launcher.ILauncherListener;
 import com.tangerine.eccore.EcShopping.launcher.OnLauncherFinishTag;
 import com.tangerine.ecui.Launcher.launcher_fragment;
+import com.tangerine.ecui.main.EcBottomFragment;
 import com.tangerine.ecui.sign.ISignListener;
 import com.tangerine.ecui.sign.SignIn_Fragment;
 
@@ -18,6 +20,7 @@ public class MainActivity extends ProxyActivity implements ISignListener, ILaunc
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EcStart.getConfigurator().withActivity(this);
        final ActionBar actionBar = getSupportActionBar();
         if (actionBar != null){
             actionBar.hide();
@@ -31,7 +34,7 @@ public class MainActivity extends ProxyActivity implements ISignListener, ILaunc
 
     @Override
     public void onSignInSuccess() {
-        startWithPop(new ExampleFragment());
+        startWithPop(new EcBottomFragment());
         Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
     }
 
@@ -45,7 +48,7 @@ public class MainActivity extends ProxyActivity implements ISignListener, ILaunc
         switch (tag){
             case SIGNED:
                 Toast.makeText(this, "启动结束，用户已经登录了", Toast.LENGTH_SHORT).show();
-                startWithPop(new ExampleFragment());
+                startWithPop(new EcBottomFragment());
                 break;
             case NOT_SIGNED:
                 Toast.makeText(this, "启动结束，用户没有过登录", Toast.LENGTH_SHORT).show();

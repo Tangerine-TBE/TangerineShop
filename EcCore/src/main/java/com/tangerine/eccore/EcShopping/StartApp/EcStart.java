@@ -15,4 +15,7 @@ public class EcStart {
     public static Context getApplication(){
         return (Context) getConfigurations().get(ConfigureType.APPLICATION_CONTEXT.name());
     }
+    public static Configurator getConfigurator(){
+        return Configurator.getInstance();
+    }
 }

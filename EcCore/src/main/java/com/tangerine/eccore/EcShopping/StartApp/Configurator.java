@@ -1,5 +1,7 @@
 package com.tangerine.eccore.EcShopping.StartApp;
 
+import android.app.Activity;
+
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
 
@@ -35,6 +37,19 @@ public class Configurator {
         return this;
 
     }
+    public final Configurator withAppId(String appId){
+        EC_CONFIGS.put(ConfigureType.WE_CHAT_APP_ID.name(), appId);
+        return this;
+
+    }
+    public final Configurator withAppSecret(String appSecret){
+        EC_CONFIGS.put(ConfigureType.WE_CHAT_APP_SECRET.name(), appSecret);
+        return this;
+    }
+    public final Configurator withActivity(Activity activity){
+        EC_CONFIGS.put(ConfigureType.ACTIVITY.name(), activity);
+        return this;
+    }
     private void initIcons(){
         if(DESCRIPTORS.size() > 0){
             final Iconify.IconifyInitializer initializer =Iconify.with(DESCRIPTORS.get(0));
@@ -55,4 +70,5 @@ public class Configurator {
         checkConfiguration();
         return (T) EC_CONFIGS.get(key.name());
     }
+
 }

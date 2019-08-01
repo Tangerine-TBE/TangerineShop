@@ -12,6 +12,8 @@ import android.widget.Toast;
 import com.tangerine.eccore.EcShopping.Fragment.StartFragment;
 import com.tangerine.eccore.EcShopping.Net.CallBack.ISuccess;
 import com.tangerine.eccore.EcShopping.Net.RestClient;
+import com.tangerine.eccore.EcShopping.wechat.CallBacks.IWXSignInCallBack;
+import com.tangerine.eccore.EcShopping.wechat.EcWeChat.StartWeChat;
 import com.tangerine.ecui.R;
 import com.tangerine.ecui.R2;
 
@@ -26,7 +28,7 @@ public class SignIn_Fragment extends StartFragment {
     TextInputEditText signInPassWord = null;
 
     @OnClick(R2.id.android_sign_in_button)
-    void signInButtonOnClick(){
+    void signInButtonOnClick() {
         if (checkParams()) {
             RestClient.build()
                     .url("http://mock.fulingjie.com/mock-android/data/user_profile.json")
@@ -36,42 +38,47 @@ public class SignIn_Fragment extends StartFragment {
                         @Override
                         public void onSuccess(String response) {
                             Log.i("msg ", "onSuccess: " + response);
-                            SignHandler.onSignIn(response,mISignListener);
+                            SignHandler.onSignIn(response, mISignListener);
                         }
                     })
                     .build()
                     .post();
-        }else{
+        } else {
             Toast.makeText(getContext(), "failure", Toast.LENGTH_SHORT).show();
         }
     }
 
     @OnClick(R2.id.android_sign_in_button_TextView)
-    void signInButtonEditTextOnClick(){
-        start(new SignUp_fragment());
+    void signInButtonEditTextOnClick() {
+        startWithPop(new SignUp_fragment());
     }
 
     @OnClick(R2.id.icon_sign_in_weChat)
-    void signInButtonWeChat(){
-        Toast.makeText(getContext(), "没有任何微信接口", Toast.LENGTH_SHORT).show();
+    void signInButtonWeChat() {
+        StartWeChat.getInstance().onSignInSuccess(new IWXSignInCallBack() {
+            @Override
+            public void onSignInSuccess(String userInfo) {
+                
+            }
+        }).signIn();
     }
 
-    private boolean checkParams(){
+    private boolean checkParams() {
         final String email = signInEmail.getText().toString();
         final String passWord = signInPassWord.getText().toString();
         boolean isPass = true;
 
-        if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             signInEmail.setError("错误的邮箱格式");
             isPass = false;
-        }else{
+        } else {
             signInEmail.setError(null);
         }
 
-        if (passWord.isEmpty() || passWord.length() < 6){
+        if (passWord.isEmpty() || passWord.length() < 6) {
             signInPassWord.setError("错误的密码格式");
             isPass = false;
-        }else{
+        } else {
             signInPassWord.setError(null);
         }
         return isPass;
@@ -82,7 +89,7 @@ public class SignIn_Fragment extends StartFragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        if (activity instanceof ISignListener){
+        if (activity instanceof ISignListener) {
             mISignListener = (ISignListener) activity;
         }
     }
